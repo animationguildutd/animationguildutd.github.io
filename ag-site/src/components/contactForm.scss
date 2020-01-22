@@ -1,0 +1,37 @@
+.contact-form-component {
+  margin-top: $header-height ;
+  margin-bottom: 90px;
+
+  form {
+    padding: 0 30%;
+    @media screen and (max-width: 920px) {
+      padding: 0 25%;
+    }
+
+    @media screen and (max-width: 625px) {
+       padding: 0 10%;
+    }
+
+    label {
+      color: $primary;
+    }
+
+    .field {
+      .input-container {
+        margin-top: 5px;
+        margin-bottom: 25px;
+      }
+    }
+
+    .half {
+      margin-top: 10px;
+    }
+
+    button {
+      width: 30%;
+      @media screen and (max-width: 625px) {
+        width: 100%;
+      }
+    }
+  }
+}

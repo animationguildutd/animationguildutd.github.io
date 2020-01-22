@@ -1,0 +1,32 @@
+.about-section {
+  background: $secondary;
+  height: 70vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background: url(../assets/images/hero-image.png) no-repeat center top;
+  background-size: cover !important;
+
+  .section-header-component {
+    div {
+      height: auto;
+    }
+
+    h1 {
+      padding-bottom: 5px;
+      color: #fff;
+    }
+
+    p {
+      padding: 0 6%;
+      text-align: center;
+      color: #fff;
+      @media screen and (max-width: 625px) {
+        font-size: 13px;
+      }
+      @media screen and (max-width: 325px) {
+        font-size: 12px;
+      }
+    }
+  }
+}
