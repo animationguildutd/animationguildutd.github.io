@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Link from "react-router-dom";
+import Link from "./Link";
 import classNames from "classnames";
 import Rodal from "rodal";
-import logo from "../../assets/images/logo-text.png";
-import whiteLogo from "../../assets/images/logo-text-white.png";
+import logo from "../assets/images/logo-text.png";
+import whiteLogo from "../assets/images/logo-text-white.png";
 import Button from "./Button";
 import {
   HOME_PAGE_ROUTE,
@@ -14,7 +14,7 @@ import {
 
 // TODO remove this
 import "rodal/lib/rodal.css";
-import MailingListSection from "../components/MailingListSection";
+//import MailingListSection from "../components/MailingListSection";
 
 const PACKAGE_NAME = "header-component";
 const TRANSPARENT_NAV_BAR_CLASS = "is-transparent";
@@ -122,7 +122,7 @@ class Header extends Component {
         visible={this.state.isModalVisible}
         onClose={() => this.setState({ isModalVisible: false })}
       >
-        <MailingListSection isInModal />
+        {/*<MailingListSection isInModal />*/}
       </Rodal>
     );
   };

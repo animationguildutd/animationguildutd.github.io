@@ -1,6 +1,6 @@
 import React from "react";
 import classNames from "classnames";
-import DownArrow from "react-icons/lib/fa/sort-desc";
+import { FaArrowDown } from "react-icons/fa";
 
 const PACKAGE_NAME = "button-component";
 const RAISED_BUTTON_CLASS = "is-raised";
@@ -14,7 +14,7 @@ const TERTIARY_BUTTON_CLASS = "is-tertiary";
 
 const renderDownArrow = () => (
   <span className="down-arrow">
-    <DownArrow />
+    <FaArrowDown />
   </span>
 );
 
