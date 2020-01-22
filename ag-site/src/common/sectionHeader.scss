@@ -1,0 +1,32 @@
+.section-header-component {
+  height: 150px;
+
+  .section-header-container {
+    flex: 1;
+    height: 120px;
+    justify-content: space-around;
+  }
+
+  .section-header-text-container {
+    h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      @media screen and (max-width: 930px) {
+        font-size: 2rem;
+      }
+
+      @media screen and (max-width: 500px) {
+        font-size: 1.8rem;
+      }
+    }
+  }
+
+  .title {
+    text-align: center;
+    color: $primary;
+  }
+
+  .title-secondary {
+    color: $secondary;
+  }
+}

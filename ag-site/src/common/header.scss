@@ -1,0 +1,153 @@
+.header-component {
+  height: 85px;
+  box-shadow: $shadow;
+  background-color: #fff;
+  transition: all 0.2s;
+
+  z-index: 99999;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  @media screen and (max-width: $desktop) {
+    height: 70px;
+  }
+
+  .rodal-dialog {
+    width: 35% !important;
+    height: 45% !important;
+    @media screen and (max-width: $desktop) {
+      width: 35% * 1.5 !important;
+      height: 45% * 1.1 !important;
+    }
+
+    @media screen and (max-width: $tablet) {
+      width: 35% * 1.8 !important;
+    }
+
+    @media screen and (max-width: 580px) {
+      width: 35% * 2 !important;
+    }
+
+    @media screen and (max-width: 490px) {
+      width: 35% * 2.5 !important;
+    }
+
+    @media screen and (max-width: 400px) {
+      width: 95% !important;
+    }
+  }
+
+  &.is-navbar-menu-active {
+    transition: none;
+
+    .navbar-brand {
+      position: relative;
+      top: 116px;
+    }
+
+    .navbar-menu {
+      position: relative;
+      top: 126px;
+    }
+
+    .navbar-item {
+      text-align: center;
+
+      .button-component {
+        margin-left: 0px;
+
+        @media screen and (max-width: $desktop) {
+          width: 80%;
+        }
+      }
+    }
+  }
+
+  .navbar-brand {
+    margin: 0 15px;
+  }
+
+  .navbar-burger {
+    color: $primary;
+  }
+
+  // everything for transparent header goes in here
+  &.is-transparent {
+    background-color: transparent;
+    box-shadow: none;
+
+    .navbar-burger {
+      color: #fff;
+    }
+
+    .navbar-item {
+      &.text-link {
+        a {
+          color: #fff;
+          transition: all 0.2s;
+        }
+      }
+
+      .colored-logo {
+        opacity: 0;
+      }
+
+      .white-logo {
+        opacity: 1;
+      }
+    }
+  }
+
+  .logo {
+    max-height: none;
+    height: auto;
+    max-width: 200px;
+    position: absolute;
+    transition: opacity 0.2s ease-in-out;
+    transition: all 0.2s;
+    @media screen and (max-width: $desktop) {
+      max-width: 150px;
+    }
+  }
+
+  .colored-logo {
+    opacity: 1;
+  }
+
+  .white-logo {
+    opacity: 0;
+  }
+
+  .button-component {
+    margin-left: 20px;
+  }
+
+  .navbar-item {
+    &.logo-container {
+      position: relative;
+    }
+
+    &.text-link {
+      a {
+        color: #222;
+        margin-right: 10px;
+        transition: all 0.2s;
+      }
+
+      a:hover,
+      a.is-active {
+        background-color: inherit;
+        color: inherit;
+      }
+    }
+
+    .button-container {
+      @media screen and (max-width: $desktop) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
