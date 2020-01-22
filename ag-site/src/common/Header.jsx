@@ -14,7 +14,7 @@ import {
 
 // TODO remove this
 import "rodal/lib/rodal.css";
-//import MailingListSection from "../components/MailingListSection";
+import MailingListSection from "../components/MailingListSection";
 
 const PACKAGE_NAME = "header-component";
 const TRANSPARENT_NAV_BAR_CLASS = "is-transparent";
@@ -122,7 +122,7 @@ class Header extends Component {
         visible={this.state.isModalVisible}
         onClose={() => this.setState({ isModalVisible: false })}
       >
-        {/*<MailingListSection isInModal />*/}
+        {<MailingListSection isInModal />}
       </Rodal>
     );
   };

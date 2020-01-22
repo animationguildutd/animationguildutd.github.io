@@ -6,6 +6,7 @@ import MissionStatementSection from "../components/MissionStatementSection";
 import PhotoReelSection from "../components/PhotoReelSection";
 import { Waypoint } from "react-waypoint";
 import { NAV_BAR_HEIGHT } from "../common/consts/dimensions";
+import MailingListSection from "../components/MailingListSection";
 class IndexPage extends Component {
   state = {
     isAtHeroSection: true
@@ -30,6 +31,7 @@ class IndexPage extends Component {
         <Header isTransparent={this.state.isAtHeroSection} />
         <PhotoReelSection />
         <MissionStatementSection />
+        <MailingListSection />
         <Footer />
       </div>
     );
