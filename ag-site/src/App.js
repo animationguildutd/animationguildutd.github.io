@@ -12,17 +12,15 @@ import {
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Switch>
-          <Route path={"/" + CONTACT_PAGE_ROUTE}>Contact</Route>
-          <Route path={"/" + ABOUT_PAGE_ROUTE}>About</Route>
-          <Route path={"/" + EVENTS_PAGE_ROUTE}>
-            <EventsPage />
-          </Route>
-          <Route path={HOME_PAGE_ROUTE}>
-            <IndexPage />
-          </Route>
-        </Switch>
+      <Router basename={process.env.PUBLIC_URL}>
+        <Route path={CONTACT_PAGE_ROUTE}>Contact</Route>
+        <Route path={ABOUT_PAGE_ROUTE}>About</Route>
+        <Route path={EVENTS_PAGE_ROUTE}>
+          <EventsPage />
+        </Route>
+        <Route exact path={HOME_PAGE_ROUTE}>
+          <IndexPage />
+        </Route>
       </Router>
     </div>
   );
