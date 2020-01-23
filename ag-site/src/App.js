@@ -1,7 +1,8 @@
 import React from "react";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import IndexPage from "./pages";
+import IndexPage from "./pages/index";
+import EventsPage from "./pages/Events";
 import {
   HOME_PAGE_ROUTE,
   EVENTS_PAGE_ROUTE,
@@ -15,7 +16,9 @@ function App() {
         <Switch>
           <Route path={CONTACT_PAGE_ROUTE}>Contact</Route>
           <Route path={ABOUT_PAGE_ROUTE}>About</Route>
-          <Route path={EVENTS_PAGE_ROUTE}>Events</Route>
+          <Route path={EVENTS_PAGE_ROUTE}>
+            <EventsPage />
+          </Route>
           <Route path={HOME_PAGE_ROUTE}>
             <IndexPage />
           </Route>
