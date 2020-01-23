@@ -14,9 +14,9 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route path={CONTACT_PAGE_ROUTE}>Contact</Route>
-          <Route path={ABOUT_PAGE_ROUTE}>About</Route>
-          <Route path={EVENTS_PAGE_ROUTE}>
+          <Route path={"/" + CONTACT_PAGE_ROUTE}>Contact</Route>
+          <Route path={"/" + ABOUT_PAGE_ROUTE}>About</Route>
+          <Route path={"/" + EVENTS_PAGE_ROUTE}>
             <EventsPage />
           </Route>
           <Route path={HOME_PAGE_ROUTE}>
