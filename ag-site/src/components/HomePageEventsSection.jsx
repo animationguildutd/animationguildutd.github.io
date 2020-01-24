@@ -1,9 +1,8 @@
 import React from "react";
-import Link from "../common/Link";
 import SectionHeader from "../common/SectionHeader";
 import Event from "./Event";
 import Button from "../common/Button";
-
+import { Link } from "react-router-dom";
 const PACKAGE_NAME = "home-page-events-section-component";
 const BIG_SECTION_HEADER_CLASS_NAME = "big-section-header";
 

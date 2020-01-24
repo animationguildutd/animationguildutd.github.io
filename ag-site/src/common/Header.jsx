@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Link from "./Link";
+import { Link } from "react-router-dom";
 import classNames from "classnames";
 import Rodal from "rodal";
 import logo from "../assets/images/logo-text.png";
