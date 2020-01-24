@@ -70,8 +70,7 @@ class Header extends Component {
 
   renderMobileMenu = () => {
     return (
-      <a
-        role="button"
+      <button
         className="navbar-burger"
         data-target="navMenu"
         aria-label="menu"
@@ -80,7 +79,7 @@ class Header extends Component {
         <span aria-hidden="true" />
         <span aria-hidden="true" />
         <span aria-hidden="true" />
-      </a>
+      </button>
     );
   };
 
