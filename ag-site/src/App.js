@@ -9,17 +9,15 @@ import {
   ABOUT_PAGE_ROUTE,
   CONTACT_PAGE_ROUTE
 } from "./common/consts/routes";
+import AboutPage from "./pages/About";
+import ContactPage from "./pages/Contact";
 function App() {
   return (
     <div className="App">
-      <Route path={CONTACT_PAGE_ROUTE}>Contact</Route>
-      <Route path={ABOUT_PAGE_ROUTE}>About</Route>
-      <Route path={EVENTS_PAGE_ROUTE}>
-        <EventsPage />
-      </Route>
-      <Route exact path={HOME_PAGE_ROUTE}>
-        <IndexPage />
-      </Route>
+      <Route path={CONTACT_PAGE_ROUTE} component={ContactPage} />
+      <Route path={ABOUT_PAGE_ROUTE} component={AboutPage} />
+      <Route path={EVENTS_PAGE_ROUTE} component={EventsPage} />
+      <Route exact path={HOME_PAGE_ROUTE} component={IndexPage} />
     </div>
   );
 }
