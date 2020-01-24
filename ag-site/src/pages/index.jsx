@@ -11,6 +11,7 @@ import MailingListSection from "../components/MailingListSection";
 import EventsSection from "../components/HomePageEventsSection";
 import { initGoogleSheets, getAllEvents } from "../scripts/googleSheets";
 import scrollRoutes from "../common/consts/scroll-routes";
+import isTodayOrInTheFuturePredicate from "../scripts/isTodayOrInTheFuturePredicate";
 
 const { EVENTS_SECTION_SCROLL_ROUTE } = scrollRoutes;
 class IndexPage extends Component {
@@ -24,6 +25,7 @@ class IndexPage extends Component {
   };
   dataLoadedCB = () => {
     let events = getAllEvents();
+    events = events.filter(isTodayOrInTheFuturePredicate);
     this.setState({ events: events });
   };
   renderHeroSection = () => (
