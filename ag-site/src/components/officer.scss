@@ -2,6 +2,8 @@
   .officer-image {
     border-radius: 50%;
     box-shadow: $shadow-dark;
+    width: 250px !important;
+    height: 250px !important;
   }
 
   .officer-information {
@@ -10,7 +12,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
+
     .position {
       color: $primary;
       font-size: 24px;
@@ -30,17 +32,17 @@
       width: 35%;
       font-size: 20px;
       margin-top: 5px;
-      
+
       a {
         color: $primary;
         opacity: 1;
 
         &:hover {
-          opacity: .8;
+          opacity: 0.8;
         }
       }
     }
-    
+
     p {
       margin: 0;
     }

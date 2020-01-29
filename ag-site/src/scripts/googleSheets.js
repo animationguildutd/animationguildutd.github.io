@@ -46,10 +46,17 @@ const getAllEvents = () => {
 };
 
 const processOfficersData = (data, tabletop) => {
-  data.forEach(officer => officers.push(officer));
+  data.forEach(officer => addOfficer(officer));
   update();
 };
-
+const addOfficer = officer => {
+  if (officer.order !== "") {
+    officer.order = parseInt(officer.order);
+  } else {
+    officer.order = 100;
+  }
+  officers.push(officer);
+};
 const processEventsData = (data, tabletop) => {
   data.forEach(event => events.push(event));
   update();
