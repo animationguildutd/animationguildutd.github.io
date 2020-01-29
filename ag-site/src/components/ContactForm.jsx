@@ -9,12 +9,7 @@ const ContactForm = () => (
   <section className={PACKAGE_NAME}>
     <SectionHeader text="Keep In Touch" />
     <div className="container">
-      <form
-        name="contact"
-        method="post"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-      >
+      <form action="https://formspree.io/xeqgqeao" method="POST">
         <input type="hidden" name="form-name" value="contact" />
         <div className="field half first">
           <label htmlFor="name">Name*</label>
