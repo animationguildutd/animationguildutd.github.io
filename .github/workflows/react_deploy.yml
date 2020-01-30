@@ -30,7 +30,7 @@ jobs:
         run: |
           cd build
           touch CNAME
-          echo "animationutd.com"
+          echo "animationutd.com" >> CNAME
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
