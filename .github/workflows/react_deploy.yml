@@ -26,6 +26,11 @@ jobs:
         run: |
           mkdir build
           cp -a ./ag-site/build/. ./build
+      - name: Create CNAME file
+        run: |
+          cd build
+          touch CNAME
+          echo "animationutd.com"
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
