@@ -6,7 +6,13 @@ const PACKAGE_NAME = "officer-section-component";
 
 const Officer = ({ firstName, lastName, position, linkedin, image }) => (
   <section className={PACKAGE_NAME}>
-    {image !== "" && <img src={image} className="officer-image" />}
+    {image !== "" && (
+      <img
+        src={image}
+        alt={firstName + " " + lastName}
+        className="officer-image"
+      />
+    )}
     <div className="officer-information">
       <p className="position">{capitalize(position)}</p>
       <p className="name">
