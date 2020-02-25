@@ -9,7 +9,7 @@ import { initGoogleSheets, getAllEvents } from "../scripts/googleSheets";
 
 const getEvents = events => {
   const upcomingEvents = reverse(events.filter(isTodayOrInTheFuturePredicate));
-  const pastEvents = difference(events, upcomingEvents);
+  const pastEvents = reverse(difference(events, upcomingEvents));
 
   return [...upcomingEvents, ...pastEvents];
 };
