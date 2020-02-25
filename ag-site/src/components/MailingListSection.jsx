@@ -13,7 +13,7 @@ import HTMLContent from "../common/HTMLContent";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 const PACKAGE_NAME = "mailing-list-section-component";
 const SECTION_HEADER_CLASS_NAME = "mailing-list-section-header";
-
+//push
 const MAILCHIMP_URL =
   "https://facebook.us16.list-manage.com/subscribe/post?u=5ae11bc484c4c935998f1fcbc&amp;id=01b1dca7fa";
 class MailingListSection extends Component {

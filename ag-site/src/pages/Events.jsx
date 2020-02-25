@@ -6,7 +6,7 @@ import Events from "../components/EventsPageEventsSection";
 import Footer from "../common/Footer";
 import isTodayOrInTheFuturePredicate from "../scripts/isTodayOrInTheFuturePredicate";
 import { initGoogleSheets, getAllEvents } from "../scripts/googleSheets";
-
+//push
 const getEvents = events => {
   const upcomingEvents = reverse(events.filter(isTodayOrInTheFuturePredicate));
   const pastEvents = reverse(difference(events, upcomingEvents));
