@@ -3,6 +3,7 @@ import { isEmpty } from "lodash";
 import classNames from "classnames";
 import { FaFacebookSquare as FacebookIcon } from "react-icons/fa";
 import { FaEnvelope as MailIcon } from "react-icons/fa";
+import { FaDiscord as DiscordIcon } from "react-icons/fa";
 import { FaInstagram as InstagramIcon } from "react-icons/fa";
 import SectionHeader from "../common/SectionHeader";
 import Button from "../common/Button";
@@ -139,6 +140,13 @@ class MailingListSection extends Component {
               rel="noopener noreferrer"
             >
               <InstagramIcon />
+            </a>
+            <a
+              href="https://discord.gg/AGzrNd8"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <DiscordIcon />
             </a>
           </Row>
         ) : (
