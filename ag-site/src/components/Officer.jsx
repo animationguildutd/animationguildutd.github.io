@@ -1,10 +1,18 @@
 import React from "react";
 import { FaLinkedinIn as LinkedinIcon } from "react-icons/fa";
+import { FaGlobeAmericas as WebsiteIcon } from "react-icons/fa";
 import { capitalize } from "lodash";
 
 const PACKAGE_NAME = "officer-section-component";
 
-const Officer = ({ firstName, lastName, position, linkedin, image }) => (
+const Officer = ({
+  firstName,
+  lastName,
+  position,
+  linkedin,
+  image,
+  website
+}) => (
   <section className={PACKAGE_NAME}>
     {image !== "" && (
       <img
@@ -27,6 +35,16 @@ const Officer = ({ firstName, lastName, position, linkedin, image }) => (
             rel="noopener noreferrer"
           >
             <LinkedinIcon />
+          </a>
+        )}
+        {website && (
+          <a
+            className="website-icon"
+            href={website}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <WebsiteIcon />
           </a>
         )}
       </div>
