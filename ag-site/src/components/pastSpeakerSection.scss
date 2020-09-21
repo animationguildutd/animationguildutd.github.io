@@ -1,0 +1,27 @@
+.past-speakers-section-component {
+  margin-bottom: 30px;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 5%;
+
+    .past-speaker-section-component {
+      width: 33%;
+      @media screen and (max-width: 920px) {
+        width: 50%;
+      }
+
+      @media screen and (max-width: 650px) {
+        width: 100%;
+      }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+}

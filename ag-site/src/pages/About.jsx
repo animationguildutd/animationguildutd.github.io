@@ -14,8 +14,6 @@ class AboutPage extends Component {
   state = { officers: [] };
   dataLoadedCB = () => {
     let officers = getAllOfficers();
-    console.log(officers);
-    console.log("SORT", sortBy(officers, "order"));
     officers = sortBy(officers, "order");
     this.setState({ officers: officers });
   };

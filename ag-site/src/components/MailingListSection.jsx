@@ -13,21 +13,20 @@ import HTMLContent from "../common/HTMLContent";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 const PACKAGE_NAME = "mailing-list-section-component";
 const SECTION_HEADER_CLASS_NAME = "mailing-list-section-header";
-//push
 const MAILCHIMP_URL =
   "https://facebook.us16.list-manage.com/subscribe/post?u=5ae11bc484c4c935998f1fcbc&amp;id=01b1dca7fa";
 class MailingListSection extends Component {
   state = {
     email: null,
     result: null,
-    message: ""
+    message: "",
   };
 
   resetState = () =>
     setTimeout(() => this.setState({ result: null, message: "" }), 3000);
 
   // TODO: fix this by adding the required fields for the form
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
     e.stopPropagation();
     // console.log(e);
@@ -94,7 +93,7 @@ class MailingListSection extends Component {
                 <div className="email-input-container">
                   <Input
                     placeholder="example@domain.com"
-                    onChange={e => this.setState({ email: e.target.value })}
+                    onChange={(e) => this.setState({ email: e.target.value })}
                   />
                 </div>
                 <div className="add-button-container">
@@ -104,7 +103,7 @@ class MailingListSection extends Component {
                       subscribe({
                         EMAIL: this.state.email,
                         FNAME: "N-A",
-                        LNAME: "N-A"
+                        LNAME: "N-A",
                       })
                     }
                     type="submit"

@@ -8,6 +8,7 @@ import PhotoReelSection from "../components/PhotoReelSection";
 import { Waypoint } from "react-waypoint";
 import { NAV_BAR_HEIGHT } from "../common/consts/dimensions";
 import MailingListSection from "../components/MailingListSection";
+import PastSpeakerSection from "../components/PastSpeakersSection";
 import EventsSection from "../components/HomePageEventsSection";
 import { initGoogleSheets, getAllEvents } from "../scripts/googleSheets";
 import scrollRoutes from "../common/consts/scroll-routes";
@@ -21,7 +22,7 @@ class IndexPage extends Component {
   }
   state = {
     isAtHeroSection: true,
-    events: []
+    events: [],
   };
   dataLoadedCB = () => {
     let events = getAllEvents();
@@ -57,4 +58,4 @@ class IndexPage extends Component {
   }
 }
 
-export default IndexPage;
+export default IndexPage; //das

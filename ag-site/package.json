@@ -2,11 +2,12 @@
   "name": "ag-site",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://animationguildutd.github.io/",
+  "homepage": "https://animationguildutd.github.io/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "@types/lodash": "^4.14.161",
     "bulma": "^0.8.0",
     "classnames": "^2.2.6",
     "lodash": "^4.17.15",
@@ -21,7 +22,8 @@
     "react-scroll": "^1.7.16",
     "react-waypoint": "^9.0.2",
     "rodal": "^1.7.0",
-    "tabletop": "^1.6.2"
+    "tabletop": "^1.6.2",
+    "typescript": "^4.0.3"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -30,7 +30,7 @@ const SectionHeader = ({ children, text, isSecondary, className }) => {
 };
 
 SectionHeader.propTypes = {
-  text: propTypes.string
+  text: propTypes.string,
 };
 
 export default SectionHeader;
