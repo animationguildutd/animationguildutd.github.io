@@ -1,19 +1,19 @@
 import React, { Component } from "react";
-import { reverse, difference } from "lodash";
+import { reverse } from "lodash";
 import Header from "../common/Header";
 import MailingListSection from "../components/MailingListSection";
-import Events from "../components/EventsPageEventsSection";
+import EventStreamsSection from "../components/EventStreamsSection";
 import Footer from "../common/Footer";
 import isTodayOrInTheFuturePredicate from "../scripts/isTodayOrInTheFuturePredicate";
+import hasStreamURL from "../scripts/hasStreamURL";
 import { initGoogleSheets, getAllEvents } from "../scripts/googleSheets";
 const getEvents = (events) => {
   const upcomingEvents = reverse(events.filter(isTodayOrInTheFuturePredicate));
-  const pastEvents = reverse(difference(events, upcomingEvents));
-
-  return [...upcomingEvents, ...pastEvents];
+  const streamEvents = upcomingEvents.filter(hasStreamURL);
+  return streamEvents;
 };
 
-class EventsPage extends Component {
+class EventStreamsPage extends Component {
   constructor(props) {
     super(props);
     initGoogleSheets(this.dataLoadedCB);
@@ -27,7 +27,7 @@ class EventsPage extends Component {
     return (
       <div>
         <Header />
-        <Events events={getEvents(this.state.events)} />
+        <EventStreamsSection events={getEvents(this.state.events)} />
         <MailingListSection />
         <Footer />
       </div>
@@ -35,4 +35,4 @@ class EventsPage extends Component {
   }
 }
 
-export default EventsPage;
+export default EventStreamsPage;
