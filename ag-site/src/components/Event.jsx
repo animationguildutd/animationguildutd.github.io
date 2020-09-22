@@ -4,6 +4,8 @@ import { toUpper } from "lodash";
 import classNames from "classnames";
 import HTMLContent from "../common/HTMLContent";
 import Button from "../common/Button";
+import Row from "../common/Row";
+import isTodayOrInTheFuturePredicate from "../scripts/isTodayOrInTheFuturePredicate";
 import { EVENT_TITLE_DATE_FORMAT } from "../common/consts/dates";
 
 const PACKAGE_NAME = "event-component";
@@ -14,26 +16,43 @@ const renderEventImage = (imageUrl) => (
     <img src={imageUrl} alt="" />
   </div>
 );
-const renderButton = (event, showStreamURL) => {
-  if (showStreamURL) {
+const renderButton = (event) => {
+  if (
+    event.streamURL &&
+    event.streamURL.length > 0 &&
+    isTodayOrInTheFuturePredicate(event)
+  ) {
     return (
-      <Button
-        text="Event Stream"
-        onPress={() => (window.location.href = event.streamURL)}
-        raised
-        hasShadow
-        isTertiary
-      />
+      <div className="learn-more-and-event-stream-button-container">
+        <Row>
+          <Button
+            className="learn-more-button"
+            text="Learn More"
+            onPress={() => (window.location.href = event.eventUrl)}
+          />
+          <Button
+            raised
+            isTertiary
+            text="Watch Here"
+            onPress={() => (window.location.href = event.streamURL)}
+          />
+        </Row>
+      </div>
     );
   }
   return (
-    <Button
-      text="Learn More"
-      onPress={() => (window.location.href = event.eventUrl)}
-    />
+    <div className="learn-more-button-container">
+      <Row>
+        <Button
+          className="learn-more-button"
+          text="Learn More"
+          onPress={() => (window.location.href = event.eventUrl)}
+        />
+      </Row>
+    </div>
   );
 };
-const renderEventDetails = (event, showStreamURL) => {
+const renderEventDetails = (event) => {
   const { title, date, location, time, eventHTML } = event;
   const formattedDate = moment(date).format(EVENT_TITLE_DATE_FORMAT);
   return (
@@ -45,9 +64,8 @@ const renderEventDetails = (event, showStreamURL) => {
       </h3>
       <h3>{time}</h3>
       <HTMLContent html={eventHTML} classNames="content" />
-      <div className="learn-more-button-container">
-        {renderButton(event, showStreamURL)}
-      </div>
+
+      {renderButton(event)}
     </div>
   );
 };
@@ -71,7 +89,7 @@ const Event = ({ event, showStreamURL = false }) => {
   return (
     <div className={eventComponentClassNames}>
       {renderEventImage(imageUrl)}
-      {renderEventDetails(event, showStreamURL)}
+      {renderEventDetails(event)}
       {renderEventDate(date)}
     </div>
   );
