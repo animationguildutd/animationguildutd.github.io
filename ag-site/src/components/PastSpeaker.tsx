@@ -9,7 +9,7 @@ const PastSpeaker = (props: PastSpeakerModel) => {
     props.lastName
   )}`;
   if (props.position) {
-    text = `${text} - ${capitalize(props.position)}`;
+    text = `${text} - ${props.position}`;
   }
   return <section className={PACKAGE_NAME}>{text}</section>;
 };

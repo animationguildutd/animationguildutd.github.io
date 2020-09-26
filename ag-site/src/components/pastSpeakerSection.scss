@@ -11,16 +11,17 @@
 
     .past-speaker-section-component {
       width: 33%;
-      @media screen and (max-width: 920px) {
+      @media screen and (max-width: 1217px) {
         width: 50%;
       }
 
-      @media screen and (max-width: 650px) {
+      @media screen and (max-width: 720px) {
         width: 100%;
       }
+      font-size: 12px;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       flex-direction: column;
     }
   }

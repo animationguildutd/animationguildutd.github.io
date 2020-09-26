@@ -4,47 +4,15 @@ import PastSpeaker from "./PastSpeaker";
 import PastSpeakerModel from "../models/PastSpeakerModel";
 
 const PACKAGE_NAME = "past-speakers-section-component";
-
-const PAST_SPEAKERS = [
-  { firstName: "jon", lastName: "washington" },
-  { firstName: "jonathan", lastName: "washington" },
-  { firstName: "jonny", lastName: "washington" },
-  { firstName: "j", lastName: "wash", position: "animator" },
-  { firstName: "jon", lastName: "washington" },
-  { firstName: "jonathan", lastName: "washington" },
-  { firstName: "jonny", lastName: "washington" },
-  { firstName: "j", lastName: "wash", position: "animator" },
-  { firstName: "jon", lastName: "washington" },
-  { firstName: "jonathan", lastName: "washington" },
-  { firstName: "jonny", lastName: "washington" },
-  { firstName: "j", lastName: "wash", position: "animator" },
-  { firstName: "jon", lastName: "washington" },
-  { firstName: "jonathan", lastName: "washington" },
-  { firstName: "jonny", lastName: "washington" },
-  { firstName: "j", lastName: "wash", position: "animator" },
-  { firstName: "jon", lastName: "washington" },
-  { firstName: "jonathan", lastName: "washington" },
-  { firstName: "jonny", lastName: "washington" },
-  { firstName: "j", lastName: "wash", position: "animator" },
-  { firstName: "jon", lastName: "washington" },
-  { firstName: "jonathan", lastName: "washington" },
-  { firstName: "jonny", lastName: "washington" },
-  { firstName: "j", lastName: "wash", position: "animator" },
-  { firstName: "jon", lastName: "washington" },
-  { firstName: "jonathan", lastName: "washington" },
-  { firstName: "jonny", lastName: "washington" },
-  { firstName: "j", lastName: "wash", position: "animator" },
-  { firstName: "jon", lastName: "washington" },
-  { firstName: "jonathan", lastName: "washington" },
-  { firstName: "jonny", lastName: "washington" },
-  { firstName: "j", lastName: "wash", position: "animator" },
-];
+interface PastSpeakersSectionProps {
+  pastSpeakers: Array<PastSpeakerModel>;
+}
 
 const renderPastSpeaker = (speaker: PastSpeakerModel) => (
   <PastSpeaker {...speaker} />
 );
 
-const PastSpeakerSection = () => (
+const PastSpeakerSection = (props: PastSpeakersSectionProps) => (
   <section className={PACKAGE_NAME}>
     <SectionHeader
       text="Past Speakers"
@@ -53,7 +21,8 @@ const PastSpeakerSection = () => (
       children={[]}
     />
     <div className="container">
-      {PAST_SPEAKERS.map((speaker) => renderPastSpeaker(speaker))}
+      {Array.isArray(props.pastSpeakers) &&
+        props.pastSpeakers.map((speaker) => renderPastSpeaker(speaker))}
     </div>
   </section>
 );

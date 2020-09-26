@@ -8,12 +8,16 @@ import PhotoReelSection from "../components/PhotoReelSection";
 import { Waypoint } from "react-waypoint";
 import { NAV_BAR_HEIGHT } from "../common/consts/dimensions";
 import MailingListSection from "../components/MailingListSection";
-//import PastSpeakerSection from "../components/PastSpeakersSection";
+import PastSpeakerSection from "../components/PastSpeakersSection";
 import EventsSection from "../components/HomePageEventsSection";
-import { initGoogleSheets, getAllEvents } from "../scripts/googleSheets";
+import {
+  initGoogleSheets,
+  getAllEvents,
+  getAllPastSpeakers,
+} from "../scripts/googleSheets";
 import scrollRoutes from "../common/consts/scroll-routes";
 import isTodayOrInTheFuturePredicate from "../scripts/isTodayOrInTheFuturePredicate";
-
+import pastSpeakerNameCompare from "../scripts/pastSpeakerNameCompare";
 const { EVENTS_SECTION_SCROLL_ROUTE } = scrollRoutes;
 class IndexPage extends Component {
   constructor(props) {
@@ -23,11 +27,14 @@ class IndexPage extends Component {
   state = {
     isAtHeroSection: true,
     events: [],
+    pastSpeakers: [],
   };
   dataLoadedCB = () => {
     let events = getAllEvents();
     events = events.filter(isTodayOrInTheFuturePredicate);
-    this.setState({ events: events });
+    let speakers = getAllPastSpeakers();
+    speakers = speakers.sort(pastSpeakerNameCompare);
+    this.setState({ events: events, pastSpeakers: speakers });
   };
   renderHeroSection = () => (
     <Waypoint
@@ -51,6 +58,7 @@ class IndexPage extends Component {
         </Element>
         <PhotoReelSection />
         <MissionStatementSection />
+        <PastSpeakerSection pastSpeakers={this.state.pastSpeakers} />
         <MailingListSection />
         <Footer />
       </div>
@@ -58,4 +66,4 @@ class IndexPage extends Component {
   }
 }
 
-export default IndexPage; //das
+export default IndexPage;
