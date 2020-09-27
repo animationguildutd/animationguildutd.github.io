@@ -1,6 +1,6 @@
 .mission-statement-section-component {
-  padding: 80px 0;
-
+  padding-top: 80px;
+  padding-bottom: 40px;
   .title {
     text-align: center;
     padding: 0 10%;
@@ -8,7 +8,7 @@
 
     @media screen and (max-width: 800px) {
       font-size: 1.5rem;
-    }   
+    }
   }
 
   .sub-title {
@@ -17,6 +17,6 @@
 
     @media screen and (max-width: 1030px) {
       padding: 0 15%;
-    }   
+    }
   }
 }
