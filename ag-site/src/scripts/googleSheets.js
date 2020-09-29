@@ -18,6 +18,7 @@ const initGoogleSheets = (finishedCB) => {
   finishedCallBack = finishedCB;
   officers = [];
   events = [];
+  pastSpeakers = [];
   updateCount = 0;
   Tabletop.init({
     key: eventsURL,
