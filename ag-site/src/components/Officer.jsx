@@ -5,6 +5,7 @@ import { capitalize } from "lodash";
 
 const PACKAGE_NAME = "officer-section-component";
 
+const invisibleIcon = (<p style={{visibility:"hidden"}}><WebsiteIcon /></p>);
 const Officer = ({
   firstName,
   lastName,
@@ -47,6 +48,7 @@ const Officer = ({
             <WebsiteIcon />
           </a>
         )}
+        {!website && !linkedin && invisibleIcon}
       </div>
     </div>
   </section>
