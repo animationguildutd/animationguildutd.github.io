@@ -117,7 +117,7 @@ class Event extends Component {
     );
   };
   render() {
-    const { event, showStreamURL = false } = this.props;
+    const { event } = this.props;
     const { date, imageUrl } = event;
     return (
       <div className={eventComponentClassNames}>
