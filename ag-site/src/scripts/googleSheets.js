@@ -1,13 +1,12 @@
-import Tabletop from "tabletop";
-
+import * as Papa from 'papaparse';
 const officersURL =
-  "https://docs.google.com/spreadsheets/d/1PXeXmX5u1cB-1TdtTfLf7tqsav203c4Qo0quof5BUaQ/edit?usp=sharing";
+  "https://docs.google.com/spreadsheets/d/1PXeXmX5u1cB-1TdtTfLf7tqsav203c4Qo0quof5BUaQ/pub?output=csv";
 
 const eventsURL =
-  "https://docs.google.com/spreadsheets/d/1V3ZVLOu47u_P1yBePGJuxginScsswPu3gTS8W0A3N_4/edit?usp=sharing";
+  "https://docs.google.com/spreadsheets/d/1V3ZVLOu47u_P1yBePGJuxginScsswPu3gTS8W0A3N_4/pub?output=csv";
 
 const pastSpeakerURL =
-  "https://docs.google.com/spreadsheets/d/1GO_qcrVo2l4iNC6H8PWhiMr2qXSwf1XlrT-83bvWaKo/edit?usp=sharing";
+  "https://docs.google.com/spreadsheets/d/1GO_qcrVo2l4iNC6H8PWhiMr2qXSwf1XlrT-83bvWaKo/pub?output=csv";
 let finishedCallBack = null;
 
 let officers = [];
@@ -20,7 +19,22 @@ const initGoogleSheets = (finishedCB) => {
   events = [];
   pastSpeakers = [];
   updateCount = 0;
-  Tabletop.init({
+  Papa.parse(eventsURL, {
+          download: true,
+          header: true,
+          complete: processEventsData,
+  });
+  Papa.parse(officersURL, {
+          download: true,
+          header: true,
+          complete: processOfficersData,
+  });
+  Papa.parse(pastSpeakerURL, {
+          download: true,
+          header: true,
+          complete: processPastSpeakersData,
+  });
+  /*Tabletop.init({
     key: eventsURL,
     callback: processEventsData,
     simpleSheet: true,
@@ -36,7 +50,7 @@ const initGoogleSheets = (finishedCB) => {
     key: pastSpeakerURL,
     callback: processPastSpeakersData,
     simpleSheet: true,
-  });
+  });*/
 };
 
 let updateCount = 0;
@@ -60,12 +74,12 @@ const getAllPastSpeakers = () => {
   return pastSpeakers;
 };
 
-const processPastSpeakersData = (data, tabletop) => {
-  data.forEach((speaker) => pastSpeakers.push(speaker));
+const processPastSpeakersData = (results) => {
+  results.data.forEach((speaker) => pastSpeakers.push(speaker));
   update();
 };
-const processOfficersData = (data, tabletop) => {
-  data.forEach((officer) => addOfficer(officer));
+const processOfficersData = (results) => {
+  results.data.forEach((officer) => addOfficer(officer));
   update();
 };
 
@@ -77,9 +91,11 @@ const addOfficer = (officer) => {
   }
   officers.push(officer);
 };
-const processEventsData = (data, tabletop) => {
-  data.forEach((event) => events.push(event));
+const processEventsData = (results) => {
+  console.log(results);
+  results.data.forEach((event) => events.push(event));
   update();
+  console.log(events);
 };
 
 export { initGoogleSheets, getAllOfficers, getAllEvents, getAllPastSpeakers };
